@@ -26,6 +26,5 @@ firm_list.append({"average_profit": average_profit})
 with open("firm_list.json", "w") as file:
     json.dump(firm_list, file)
 
-
 print(json.dumps(firm_list))
 
