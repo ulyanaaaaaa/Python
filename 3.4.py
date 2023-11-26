@@ -9,20 +9,23 @@ with open("firm_data.txt", "w") as file:
 profits = []
 with open("firm_data.txt", "r") as file:
     for line in file:
-        data = line.split()
+        data = line.split() #разделение на списки по пробелам
         name = data[0]
         revenue = int(data[2])
         costs = int(data[3])
         profit = revenue - costs
-        profits.append(profit)
+        profits.append(profit) #добавление в список
 
-average_profit = sum(profit for profit in profits if profit > 0) / len(profits)
+len = 0
+for profit in profits:
+    if profit > 0:
+        len=len+1
 
-# Создание списка с фирмами и их прибылями, а также средней прибылью
-firm_list = [{f"firm_{i+1}": profit} for i, profit in enumerate(profits)]
-firm_list.append({"average_profit": average_profit})
+average_profit = sum(profit for profit in profits if profit > 0) / len #сумма всех положительных значений
 
-# Сохранение списка в виде json-объекта
+firm_list = [{f"firm_{i+1}": profit} for i, profit in enumerate(profits)] #список из словарей
+firm_list.append({"average_profit": average_profit})  #добавление словаря
+
 with open("firm_list.json", "w") as file:
     json.dump(firm_list, file)
 
