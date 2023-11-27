@@ -5,7 +5,7 @@ X=np.array([
         [1,3,62],
         [1,4,73],
         [1,5,74],
-        [1,6,80 ],
+        [1,6,80],
         [1,7,82],
         [1,8,69],
         [1,9,68],
@@ -30,9 +30,9 @@ Y=np.array([
         18.6
 ])
 
-X_tr=X.T
-X_tr_X=X_tr.dot(X)
-X_tr_X_revers=np.linalg.inv(X_tr_X)
+X_tr=X.T #транспонирование
+X_tr_X=X_tr.dot(X)  #умножение
+X_tr_X_revers=np.linalg.inv(X_tr_X) #обратная матрица
 X_tr_Y=X_tr.dot(Y)
 A=X_tr_X_revers.dot(X_tr_Y)
 print("Вектор оценок А = ", A)
