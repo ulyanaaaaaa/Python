@@ -4,13 +4,13 @@ from mpl_toolkits.mplot3d import Axes3D
 
 fig = plt.figure(figsize=(15, 7))
 
-x = np.linspace(4, 10, 100)
+x = np.linspace(4, 10, 100) #генерация последовательности чисел в линейном пространстве с одинаковым размером шага.
 y = np.linspace(4, 10, 100)
-X, Y = np.meshgrid(x, y)
+X, Y = np.meshgrid(x, y) #создание прямоугольной сетки
 
 Z1 = X**0.25 + Y**0.25
-ax1 = fig.add_subplot(231, projection='3d')
-ax1.plot_surface(X, Y, Z1, cmap='plasma')
+ax1 = fig.add_subplot(231, projection='3d') #разделение на отдельные области
+ax1.plot_surface(X, Y, Z1, cmap='plasma') #построение 3-хмерного графика
 ax1.set_title("z = x^0.25+y^0.25")
 ax1.set_xlabel('X')
 ax1.set_ylabel('Y')
@@ -52,5 +52,5 @@ ax5.set_xlabel('X')
 ax5.set_ylabel('Y')
 ax5.set_zlabel('Z')
 
-plt.tight_layout()
+plt.tight_layout() #создание пространства между графиками
 plt.show()

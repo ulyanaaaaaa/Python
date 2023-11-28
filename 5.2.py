@@ -31,6 +31,8 @@ plt.show()
 # Шаг 5: Заполнить пропуски и обработать аномалии
 # Заполнение пропусков (например, средним значением)
 numeric_columns = df_subset.select_dtypes(include=[np.number]).columns
+
+# Заменяет все пропущенные значения в числовых столбцах средним значением по соответствующему столбцу
 df_subset.loc[:, numeric_columns] = df_subset.loc[:, numeric_columns].fillna(df_subset.loc[:, numeric_columns].mean())
 
 # Обработка аномальных значений (например, удаление выбросов)
