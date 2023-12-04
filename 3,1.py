@@ -1,4 +1,3 @@
-
 f1 = open("F1.txt", "w+")
 f2 = open("F2.txt", "w+")
 while True:
